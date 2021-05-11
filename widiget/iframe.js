@@ -23,10 +23,10 @@ iframee.id = 'iframe';
 
 style[8] = {
 	iframe : {
-		height : 278,
+		height : 290,
 		overflow : 'hidden',
 		scrolling : 'no',
-		width : 310
+		width : 368
 	}
 };
 
