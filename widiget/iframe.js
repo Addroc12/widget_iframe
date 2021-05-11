@@ -1,22 +1,38 @@
 
 function initIframe() {
 	var div = document.getElementById('iframdiv');
-	console.log(div)
-	div.appendChild(iframee);
+	// here we check if div has firstChild or not 
+	if (!div.firstChild) {
+		div.appendChild(iframee);
+	} else if (div.firstChild && div.firstChild.nodeName != 'IFRAME') {
+		div.insertBefore(iframee, div.firstChild);
+	}
+
+
 }
 
-var _bfcfg = {};
+
+var arrayStyle = {};
 var iframee = document.createElement('iframe');
 var style = [];
 var tries = 1;
-
+arrayStyle.type = 8;
 iframee.name = 'bfiframe';
 iframee.src = "widget.html";
 iframee.id = 'iframe';
 
+style[8] = {
+	iframe : {
+		height : 278,
+		overflow : 'hidden',
+		scrolling : 'no',
+		width : 310
+	}
+};
 
-iframee.width = '310'
-iframee.height ='270'
+
+iframee.width = style[arrayStyle.type].iframe.width;
+iframee.height =style[arrayStyle.type].iframe.height;
 iframee.scrolling = 'no'
 iframee.frameBorder = '0';
 iframee.style.borderWidth = 0;
